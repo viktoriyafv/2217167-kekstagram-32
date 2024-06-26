@@ -13,24 +13,22 @@ console.log(checkStringLength('The sea is worried', 23));
 
 /*Функция для проверки, является ли строка палиндромом*/
 
-const palindromeString = (string) => {
+const isPalindrome = (string) => {
   const normalString = string.replaceAll(' ', '').toUpperCase();
-  let newString = '';
-  for (let i = normalString.length - 1; i >= 0; i--){
-    // eslint-disable-next-line no-unused-vars
-    newString += normalString.at(i);
-  }
-  return normalString === newString;
+  const reversed = normalString.split('').reverse().join('');
+  // eslint-disable-next-line no-console
+  console.log(normalString === reversed);
+  return normalString === reversed;
 };
 
 // eslint-disable-next-line no-console
-console.log(palindromeString('топот'));
+isPalindrome('топот');
 
 // eslint-disable-next-line no-console
-console.log(palindromeString('Лёша на полке клопа нашёл'));
+isPalindrome('Лёша на полке клопа нашёл');
 
 // eslint-disable-next-line no-console
-console.log(palindromeString('Алеша на полке клопа нашел'));
+isPalindrome('Алеша на полке клопа нашел');
 
 
 /*Функция принимает строку, извлекает содержащиеся в ней цифры от 0 до 9 и возвращает их в виде целого положительного числа.*/
@@ -42,16 +40,18 @@ const isNumbers = (string) => {
     const char = parseInt(transformString.at(i), 10);
     checkString += Number.isNaN(char) ? '' : char;
   }
+  // eslint-disable-next-line no-console
+  console.log(checkString);
   return checkString;
 };
 // eslint-disable-next-line no-console
-console.log(isNumbers('2023 год'));
+isNumbers('2023 год');
 
 // eslint-disable-next-line no-console
-console.log(isNumbers('-140.9'));
+isNumbers('-140.9');
 
 // eslint-disable-next-line no-console
-console.log(isNumbers('1 кефир, 0.5 батона'));
+isNumbers('1 кефир, 0.5 батона');
 
 // eslint-disable-next-line no-console
-console.log(isNumbers('кефир'));
+isNumbers('кефир');

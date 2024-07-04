@@ -33,13 +33,14 @@ const DESCRIPTIONS = [
   'Одни эмоции',
 ];
 
-const MAXAVATARNUMBER = 6;
-const MAXPHOTOID = 25;
-const MAXPHOTOURL = 25;
-const MINLIKES = 15;
-const MAXLIKES = 200;
-const MAXCOMMENTS = 30;
+const indefications = {
+  MAXAVATARNUMBER: 6,
+  MAXPHOTOID: 25,
+  MAXPHOTOURL: 25,
+  MINLIKES: 15,
+  MAXLIKES: 200,
+  MAXCOMMENTS: 30,
+  keksId: 25
+};
 
-const keksId = [25];
-
-export { NAMES, MESSAGES, DESCRIPTIONS, MAXAVATARNUMBER, MAXPHOTOID, MAXPHOTOURL, MINLIKES, MAXLIKES, MAXCOMMENTS, keksId };
+export { NAMES, MESSAGES, DESCRIPTIONS, indefications };

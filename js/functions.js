@@ -16,6 +16,7 @@ const checkTimeLength = (startTimeWork, endTimeWork, startTimeMeeting, timeMeeti
   } else {
     return false;
   }
+  /*  (timeStartTimeWork <= timeStartTimeMeeting && timeEndTimeWork >= timeEndTimeMeeting) ? true : false;  - тернарный оператор, не срабатывает*/
 };
 
 // eslint-disable-next-line no-console

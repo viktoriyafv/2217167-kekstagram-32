@@ -39,8 +39,7 @@ const indefications = {
   MAXPHOTOURL: 25,
   MINLIKES: 15,
   MAXLIKES: 200,
-  MAXCOMMENTS: 30,
-  keksId: 25
+  MAXCOMMENTS: 30
 };
 
 export { NAMES, MESSAGES, DESCRIPTIONS, indefications };

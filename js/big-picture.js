@@ -73,15 +73,11 @@ const openBigPicture = (data, comments) => {
 function closeBigPicture() {
   bigPicture.classList.add('hidden');
   body.classList.remove('modal-open');
-  commentsLoader.classList.remove('hidden');
-  socialComments.classList.remove('hidden');
   document.removeEventListener('keydown', onEscKeydown);
 }
 
-const onCloseButtonClick = () => {
+closeButtonPicture.addEventListener('click', () => {
   closeBigPicture();
-};
-
-closeButtonPicture.addEventListener('click', onCloseButtonClick);
+});
 
 export { openBigPicture };

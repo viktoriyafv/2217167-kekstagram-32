@@ -3,7 +3,7 @@ import { indefications } from './const.js';
 
 const body = document.querySelector('body');
 const bigPicture = document.querySelector('.big-picture');
-//const commentsList = bigPicture.querySelector('.social__comments');
+const commentsList = bigPicture.querySelector('.social__comments');
 const commentsLoader = bigPicture.querySelector('.comments-loader');
 const socialComments = bigPicture.querySelector('.social__comment-count');
 const closeButtonPicture = bigPicture.querySelector('.big-picture__cancel');
@@ -27,6 +27,26 @@ const onEscKeydown = (evt) => {
   <p class="social__text">{{текст комментария}}</p>
 </li>*/
 
+const renderCommentsList = (comment) => {
+  const newCommentContainer = document.createElement('li');
+  const userAvatar = document.createElement('img');
+  const textComment = document.createElement('p');
+
+  newCommentContainer.className = 'social__comment';
+  userAvatar.className = 'social__picture';
+  userAvatar.src = comment.avatar;
+  userAvatar.alt = comment.name;
+  userAvatar.width = indefications.USERAVATARWIDTH;
+  userAvatar.height = indefications.USERAVATARHEIGTH;
+  textComment.className = 'social__text';
+  textComment.textContent = comment.message;
+
+  newCommentContainer.appendChild(userAvatar);
+  newCommentContainer.appendChild(textComment);
+  commentsList.appendChild(newCommentContainer);
+};
+
+
 const renderPictureDetails = ({ url, likes, description, comments }) => {
   bigPicture.querySelector('.big-picture__img img').src = url;
   bigPicture.querySelector('.big-picture__img img').alt = description;
@@ -40,13 +60,14 @@ const renderPictureDetails = ({ url, likes, description, comments }) => {
   }
 };
 
-const openBigPicture = (data) => {
+const openBigPicture = (data, comments) => {
   bigPicture.classList.remove('hidden');
   body.classList.add('modal-open');
   commentsLoader.classList.add('hidden');
   socialComments.classList.add('hidden');
   document.addEventListener('keydown', onEscKeydown);
   renderPictureDetails(data);
+  renderCommentsList(comments);
 };
 
 function closeBigPicture() {

@@ -19,4 +19,8 @@ const getRandomIdentifier = (a = 0,b = 1000)=>{
 
 const getRandomArrayElement = (elements) => elements[getRandomInteger(0, elements.length - 1)];
 
-export { getRandomInteger, getRandomIdentifier, getRandomArrayElement, };
+const isEscapeKey = (evt) => evt.key === 'Escape';
+
+const isEnterKey = (evt) => evt.key === 'Enter';
+
+export { getRandomInteger, getRandomIdentifier, getRandomArrayElement, isEscapeKey, isEnterKey };

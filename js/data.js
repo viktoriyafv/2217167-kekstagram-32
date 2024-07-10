@@ -22,5 +22,5 @@ const createKeksObject = () => ({
 
 const similarObject = (count) => Array.from({ length: count }, createKeksObject);
 
-export { similarObject };
+export { similarObject, createRandomComment };
 

@@ -20,7 +20,7 @@ const createKeksObject = () => ({
   comments: Array.from({ length: getRandomInteger(0, indefications.MAXCOMMENTS) }, createRandomComment)
 });
 
-const similarObject = () => Array.from({ length: indefications.keksId }, createKeksObject);
+const similarObject = (count) => Array.from({ length: count }, createKeksObject);
 
 export { similarObject };
 

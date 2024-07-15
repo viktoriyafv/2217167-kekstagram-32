@@ -35,8 +35,6 @@ const renderCommentsList = (comments) => {
     newCommentContainer.appendChild(textComment);
     commentsList.appendChild(newCommentContainer);
   });
-  // eslint-disable-next-line no-console
-  console.log(commentsList);
 };
 
 const showMoreComments = (comments) => {

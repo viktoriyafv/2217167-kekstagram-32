@@ -5,7 +5,7 @@ const body = document.querySelector('body');
 const bigPicture = document.querySelector('.big-picture');
 const commentsList = bigPicture.querySelector('.social__comments');
 const commentsLoader = bigPicture.querySelector('.comments-loader');
-const socialComments = bigPicture.querySelector('.social__comment-count');
+//const socialComments = bigPicture.querySelector('.social__comment-count');
 const closeButtonPicture = bigPicture.querySelector('.big-picture__cancel');
 
 let commentShow = 0;
@@ -43,11 +43,12 @@ const showMoreComments = (comments) => {
   renderCommentsList(currentComments);
 
   if (commentShow >= comments.length) {
+    bigPicture.querySelector('.social__comment-shown-count').textContent = comments.length;
     commentsLoader.classList.add('hidden');
   } else {
     commentsLoader.classList.remove('hidden');
+    bigPicture.querySelector('.social__comment-shown-count').textContent = commentShow;
   }
-  socialComments.innerHTML = `${commentShow} из <span class="comments-count">${comments.length}</span> комментариев`;
 };
 
 
@@ -57,13 +58,6 @@ const renderPictureDetails = ({ url, likes, description, comments }) => {
   bigPicture.querySelector('.likes-count').textContent = likes;
   bigPicture.querySelector('.social__caption').textContent = description;
   bigPicture.querySelector('.social__comment-total-count').textContent = comments.length;
-
-  if (indefications.COMMENTSAMOUNT >= comments.length) {
-    bigPicture.querySelector('.social__comment-shown-count').textContent = comments.length;
-    commentsLoader.classList.add('hidden');
-  } else {
-    bigPicture.querySelector('.social__comment-shown-count').textContent = indefications.COMMENTSAMOUNT;
-  }
 };
 
 const openBigPicture = (data) => {
@@ -74,8 +68,8 @@ const openBigPicture = (data) => {
   showMoreComments(data.comments);
 };
 
-commentsLoader.addEventListener('click', (comments) => {
-  showMoreComments(comments);
+commentsLoader.addEventListener('click', () => {
+  showMoreComments();
 });
 
 function closeBigPicture() {

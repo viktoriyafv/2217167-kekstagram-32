@@ -37,21 +37,6 @@ const renderCommentsList = (comments) => {
   });
 };
 
-const showMoreComments = (comments) => {
-  commentShown += indefications.COMMENTSAMOUNT;
-  const currentComments = comments.slice(0, indefications.COMMENTSAMOUNT);
-  renderCommentsList(currentComments);
-  if (commentShown >= comments.length) {
-    bigPicture.querySelector('.social__comment-shown-count').textContent = comments.length;
-    commentsLoader.classList.add('hidden');
-  } else {
-    commentsLoader.classList.remove('hidden');
-    bigPicture.querySelector('.social__comment-shown-count').textContent = commentShown;
-  }
-
-  return currentComments;
-};
-
 const renderPictureDetails = ({ url, likes, description, comments }) => {
   bigPicture.querySelector('.big-picture__img img').src = url;
   bigPicture.querySelector('.big-picture__img img').alt = description;
@@ -73,13 +58,20 @@ const openBigPicture = (data) => {
   document.addEventListener('keydown', onEscKeydown);
   renderPictureDetails(data);
   renderCommentsList(data.comments.slice(0, indefications.COMMENTSAMOUNT));
-
+  commentsLoader.addEventListener('click', () => {
+    commentShown += indefications.COMMENTSAMOUNT;
+    const currentComments = data.comments.slice(0, commentShown);
+    renderCommentsList(currentComments);
+    if (commentShown >= data.comments.length) {
+      bigPicture.querySelector('.social__comment-shown-count').textContent = data.comments.length;
+      commentsLoader.classList.add('hidden');
+    } else {
+      commentsLoader.classList.remove('hidden');
+      bigPicture.querySelector('.social__comment-shown-count').textContent = commentShown;
+    }
+  });
+  return commentsLoader;
 };
-
-commentsLoader.addEventListener('click', (data) => {
-  showMoreComments(data.comments);
-});
-
 
 function closeBigPicture() {
   bigPicture.classList.add('hidden');

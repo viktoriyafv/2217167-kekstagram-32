@@ -1,4 +1,7 @@
-import {similarObject} from './data.js';
+import { openBigPicture } from './big-picture.js';
+import { similarObject } from './data.js';
+import { isEnterKey} from './util.js';
+
 
 const picturesContainer = document.querySelector('.pictures');
 
@@ -18,8 +21,19 @@ similarPicture.forEach(({id, url, description, likes, comments}) => {
   pictureElement.querySelector('.picture__likes').textContent = likes;
   pictureElement.querySelector('.picture__comments').textContent = comments.length;
   similarListFragment.appendChild(pictureElement);
+
+  pictureElement.addEventListener('click', () => {
+    openBigPicture({url, description, likes, comments});
+  });
+
+  pictureElement.addEventListener('keydown', (evt) => {
+    if (isEnterKey(evt)) {
+      openBigPicture({url, description, likes, comments});
+    }
+  });
+
+  return pictureElement;
 });
 
 picturesContainer.append(similarListFragment);
 
-export { similarPicture };

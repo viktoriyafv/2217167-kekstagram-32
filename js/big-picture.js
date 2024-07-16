@@ -1,9 +1,9 @@
 import { isEscapeKey } from './util.js';
 import { indefications } from './const.js';
+import { renderCommentsList } from './render-comments.js';
 
 const body = document.querySelector('body');
 const bigPicture = document.querySelector('.big-picture');
-const commentsList = bigPicture.querySelector('.social__comments');
 const commentsLoader = bigPicture.querySelector('.comments-loader');
 //const socialComments = bigPicture.querySelector('.social__comment-count');
 const closeButtonPicture = bigPicture.querySelector('.big-picture__cancel');
@@ -13,26 +13,6 @@ const onEscKeydown = (evt) => {
     evt.preventDefault();
     closeBigPicture();
   }
-};
-
-const renderCommentsList = (comments) => {
-  document.querySelector('.social__comments').textContent = '';
-  comments.forEach((comment) => {
-    const newCommentContainer = document.createElement('li');
-    const userAvatar = document.createElement('img');
-    newCommentContainer.className = 'social__comment';
-    userAvatar.className = 'social__picture';
-    userAvatar.src = comment.avatar;
-    userAvatar.alt = comment.name;
-    userAvatar.width = indefications.USERAVATARWIDTH;
-    userAvatar.height = indefications.USERAVATARHEIGTH;
-    const textComment = document.createElement('p');
-    textComment.className = 'social__text';
-    textComment.textContent = comment.message;
-    newCommentContainer.appendChild(userAvatar);
-    newCommentContainer.appendChild(textComment);
-    commentsList.appendChild(newCommentContainer);
-  });
 };
 
 const renderPictureDetails = ({ url, likes, description, comments }) => {
@@ -81,4 +61,4 @@ closeButtonPicture.addEventListener('click', () => {
   closeBigPicture();
 });
 
-export { openBigPicture };
+export { openBigPicture, closeButtonPicture };

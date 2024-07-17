@@ -1,8 +1,6 @@
 import { body, formUpload } from './const.js';
 import { isEscapeKey } from './util.js';
-import './valid.js';
 
-//const imgUploadStart = formUpload.querySelector('.img-upload-start');
 const imgUploadCancel = formUpload.querySelector('.img-upload__cancel');
 const imgUpload = formUpload.querySelector('.img-upload__input');
 const imgUploadOverlay = formUpload.querySelector('.img-upload__overlay');
@@ -15,7 +13,6 @@ const openUploadOverlay = () => {
 
 const closeUploadOverlay = () => {
   formUpload.reset();
-  //pristine.reset();
   imgUploadOverlay.classList.add('hidden');
   body.classList.remove('modal-open');
   document.removeEventListener('keydown', isEscapeKey);

@@ -1,8 +1,7 @@
 import { isEscapeKey } from './util.js';
-import { indefications } from './const.js';
+import { indefications, body } from './const.js';
 import { renderCommentsList } from './render-comments.js';
 
-const body = document.querySelector('body');
 const bigPicture = document.querySelector('.big-picture');
 const commentsLoader = bigPicture.querySelector('.comments-loader');
 //const socialComments = bigPicture.querySelector('.social__comment-count');

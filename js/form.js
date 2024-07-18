@@ -1,23 +1,9 @@
 import { body, formUpload } from './const.js';
-import { isEscapeKey } from './util.js';
+import {onEscKeydown } from './util.js';
 
 const imgUploadCancel = formUpload.querySelector('.img-upload__cancel');
 const imgUpload = formUpload.querySelector('.img-upload__input');
 const imgUploadOverlay = formUpload.querySelector('.img-upload__overlay');
-
-const onEscKeydown = (evt) => {
-  const inputFocus = evt.target.matches('input.text__hashtags:focus') || evt.target.matches('textarea.text__description:focus');
-
-  if (inputFocus) {
-    return false; // - если фокус находится в поле ввода комментария или хештега, нажатие на Esc не срабатывает.
-  }
-
-  if (isEscapeKey(evt)) {
-    evt.preventDefault();
-    closeUploadOverlay();
-  }
-
-};
 
 function openUploadOverlay () {
   imgUploadOverlay.classList.remove('hidden');
@@ -39,3 +25,6 @@ imgUpload.addEventListener('change', () => {
 imgUploadCancel.addEventListener('click', () => {
   closeUploadOverlay();
 });
+
+
+export { openUploadOverlay, closeUploadOverlay };

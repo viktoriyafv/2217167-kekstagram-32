@@ -6,15 +6,17 @@ const imgUpload = formUpload.querySelector('.img-upload__input');
 const imgUploadOverlay = formUpload.querySelector('.img-upload__overlay');
 
 const onEscKeydown = (evt) => {
-  //const inputFocus = evt.target.matches('input:focus') || evt.target.matches('textarea:focus');
+  const inputFocus = evt.target.matches('input.text__hashtags:focus') || evt.target.matches('textarea.text__description:focus');
+
+  if (inputFocus) {
+    return false; // - если фокус находится в поле ввода комментария или хештега, нажатие на Esc не срабатывает.
+  }
 
   if (isEscapeKey(evt)) {
     evt.preventDefault();
     closeUploadOverlay();
   }
-  /*if (inputFocus) {
-    evt.stopPropagation();
-  }*/
+
 };
 
 function openUploadOverlay () {

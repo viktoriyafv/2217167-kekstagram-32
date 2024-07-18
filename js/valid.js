@@ -24,9 +24,6 @@ pristine.addValidator(
   'Введён невалидный хэштег'
 );
 
-// - если фокус находится в поле ввода хэштега, нажатие на Esc не должно приводить к закрытию формы редактирования изображения
-
-
 function validateHashtags(value) {
   const tags = value.split(' ');
   return tags.length <= indefications.MAXHASHTAGCOUNT; //максимальное количество хештегов
@@ -58,8 +55,6 @@ pristine.addValidator(
   checkDescriptionLength,
   'Длина комментария больше 140 символов'
 );
-
-// - если фокус находится в поле ввода комментария, нажатие на Esc не должно приводить к закрытию формы редактирования изображения.
 
 formUpload.addEventListener('submit', (evt) => {
   const isValid = pristine.validate();

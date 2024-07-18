@@ -42,7 +42,12 @@ const indefications = {
   MAXCOMMENTS: 30,
   COMMENTSAMOUNT: 5,
   USERAVATARWIDTH: 35,
-  USERAVATARHEIGTH: 35
+  USERAVATARHEIGTH: 35,
+  MAXHASHTAGCOUNT: 5,
+  MAXCOMMENTSLENGTH: 140
 };
 
-export { NAMES, MESSAGES, DESCRIPTIONS, indefications };
+const body = document.querySelector('body');
+const formUpload = document.querySelector('.img-upload__form');
+
+export { NAMES, MESSAGES, DESCRIPTIONS, indefications, body, formUpload };

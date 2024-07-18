@@ -2,6 +2,7 @@ import { openBigPicture } from './big-picture.js';
 import { similarObject } from './data.js';
 import { isEnterKey } from './util.js';
 
+
 const picturesContainer = document.querySelector('.pictures');
 
 const pictureTemplate = document.querySelector('#picture')
@@ -35,3 +36,4 @@ similarPicture.forEach(({id, url, description, likes, comments}) => {
 });
 
 picturesContainer.append(similarListFragment);
+

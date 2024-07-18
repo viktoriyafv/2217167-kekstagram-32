@@ -26,5 +26,4 @@ imgUploadCancel.addEventListener('click', () => {
   closeUploadOverlay();
 });
 
-
 export { openUploadOverlay, closeUploadOverlay };

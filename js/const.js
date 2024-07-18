@@ -44,7 +44,7 @@ const indefications = {
   USERAVATARWIDTH: 35,
   USERAVATARHEIGTH: 35,
   MAXHASHTAGCOUNT: 5,
-  MAXCOMMENTSDESRIPTIONS: 140
+  MAXCOMMENTSLENGTH: 140
 };
 
 const body = document.querySelector('body');

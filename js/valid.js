@@ -12,23 +12,24 @@ const pristine = new Pristine(formUpload, {
   errorTextClass: '.img-upload__field-wrapper--error'
 });
 
-const checkRegularHashtag = (value) => regularHashtag.test(value);
+const checkRegularHashtag = (value) => regularHashtag.test(value); // проверка регулярного выржания
+
+function checkValidHashtag (value) {
+  return value === '' || value.split(' ').every(checkRegularHashtag); //проверка каждого элемента массива
+}
 
 pristine.addValidator(
   hashtags,
-  checkRegularHashtag,
+  checkValidHashtag,
   'Введён невалидный хэштег'
 );
 
-// - хэштеги разделяются пробелами;!!!!!!
-
-// - хэштеги необязательны;
-
 // - если фокус находится в поле ввода хэштега, нажатие на Esc не должно приводить к закрытию формы редактирования изображения
 
-function validateHashtags (value) {
+
+function validateHashtags(value) {
   const tags = value.split(' ');
-  return tags.length <= indefications.MAXHASHTAGCOUNT;
+  return tags.length <= indefications.MAXHASHTAGCOUNT; //максимальное количество хештегов
 }
 
 pristine.addValidator(
@@ -37,10 +38,10 @@ pristine.addValidator(
   'Превышено количество хэштегов'
 );
 
-const checkSimilarHashtags = (value) => {
+function checkSimilarHashtags(value) {
   const tags = value.toLowerCase().split(' ');
-  return new Set(tags).size === tags.length;
-};
+  return new Set(tags).size === tags.length; // один и тот же хэштег не может быть использован дважды;
+}
 
 pristine.addValidator(
   hashtags,
@@ -48,19 +49,23 @@ pristine.addValidator(
   'Хэштеги повторяются'
 );
 
-function validateDescription (string) {
-  return string.length <= indefications.MAXCOMMENTSDESRIPTIONS;
+function checkDescriptionLength(value) {
+  return value.length <= indefications.MAXCOMMENTSLENGTH; // максимальная длинна комментария
 }
 
 pristine.addValidator(
   comment,
-  validateDescription,
+  checkDescriptionLength,
   'Длина комментария больше 140 символов'
 );
 
-// Реализовать логику проверки: валидна - срабатывает, не валидна - форма не отправляется.!!!!!!!!
+// - если фокус находится в поле ввода комментария, нажатие на Esc не должно приводить к закрытию формы редактирования изображения.
 
 formUpload.addEventListener('submit', (evt) => {
-  evt.preventDefault();
-  pristine.validate();
+  const isValid = pristine.validate();
+  if (!isValid) {
+    evt.preventDefault();
+  }
 });
+
+// - хэштеги необязательны; // - комментарий необязателен;

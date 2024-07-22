@@ -1,5 +1,6 @@
 import { body, formUpload } from './const.js';
 import {onEscKeydown } from './util.js';
+import { defaultEffect } from './slider.js';
 
 const imgUploadCancel = formUpload.querySelector('.img-upload__cancel');
 const imgUpload = formUpload.querySelector('.img-upload__input');
@@ -9,6 +10,7 @@ function openUploadOverlay () {
   imgUploadOverlay.classList.remove('hidden');
   body.classList.add('modal-open');
   document.addEventListener('keydown', onEscKeydown);
+  defaultEffect();
 }
 
 function closeUploadOverlay () {

@@ -49,5 +49,74 @@ const indefications = {
 
 const body = document.querySelector('body');
 const formUpload = document.querySelector('.img-upload__form');
+const imgUploadPreview = document.querySelector('.img-upload__preview img');
 
-export { NAMES, MESSAGES, DESCRIPTIONS, indefications, body, formUpload };
+const FILTERSCONFIG = {
+  chrome: {
+    options: {
+      range: {
+        min: 0,
+        max: 1,
+      },
+      start: 1,
+      step: 0.1,
+    },
+    style: 'grayscale',
+    unit: '',
+  },
+
+  sepia: {
+    options: {
+      range: {
+        min: 0,
+        max: 1,
+      },
+      start: 1,
+      step: 0.1,
+    },
+    style: 'sepia',
+    unit: '',
+  },
+
+  marvin: {
+    options: {
+      range: {
+        min: 0,
+        max: 100,
+      },
+      start: 100,
+      step: 1,
+    },
+    style: 'invert',
+    unit: '%',
+  },
+
+  phobos: {
+    options: {
+      range: {
+        min: 0,
+        max: 3,
+      },
+      start: 3,
+      step: 0.1,
+    },
+    style: 'blur',
+    unit: 'px',
+  },
+
+  heat: {
+    options: {
+      range: {
+        min: 1,
+        max: 3,
+      },
+      start: 3,
+      step: 0.1,
+    },
+    style: 'brightness',
+    unit: '',
+  },
+};
+
+
+export { NAMES, MESSAGES, DESCRIPTIONS, indefications, body, formUpload, imgUploadPreview, FILTERSCONFIG };

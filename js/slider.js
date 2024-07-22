@@ -1,4 +1,4 @@
-import { imgUploadPreview, FILTERSCONFIG } from './const';
+import { imgUploadPreview, FILTERSCONFIG } from './const.js';
 
 const sliderElement = document.querySelector('.effect-level__slider');
 const sliderElementValue = document.querySelector('.effect-level__value');
@@ -40,6 +40,10 @@ const defaultEffect = () => {
 const setFilter = (filter) => {
   sliderElementBlock.classList.remove('hidden');
   sliderElement.noUiSlider.updateOptions(filter.options);
+  sliderElement.noUiSlider.on('update', (values, handle) => {
+    imgUploadPreview.style.filter = `${filter.style}(${values[handle]}${filter.unit})`;
+    sliderElementValue.value = values[handle];
+  });
 };
 
 specialElementsArray.forEach((element) => {

@@ -28,10 +28,7 @@ const isEnterKey = (evt) => evt.key === 'Enter';
 
 const onEscKeydown = (evt) => {
   const inputFocus = evt.target.matches('input.text__hashtags:focus') || evt.target.matches('textarea.text__description:focus');
-  if (inputFocus) {
-    return false; // - если фокус находится в поле ввода комментария или хештега, нажатие на Esc не срабатывает.
-  }
-  if (isEscapeKey(evt)) {
+  if (isEscapeKey(evt) && !inputFocus) {
     evt.preventDefault();
     closeUploadOverlay();
     closeBigPicture();

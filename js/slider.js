@@ -33,10 +33,13 @@ sliderElement.noUiSlider.on('update', () => {
 
 const defaultEffect = () => {
   imgUploadPreview.className = '';
-  imgUploadPreview.style.filter = 'none';
-  sliderElementValue.value = 'none';
   imgUploadPreview.classList.add('effects__preview--none');
   sliderElementBlock.classList.add('hidden');
+};
+
+const setFilter = (filter) => {
+  sliderElementBlock.classList.remove('hidden');
+  sliderElement.noUiSlider.updateOptions(filter.options);
 };
 
 specialElementsArray.forEach((element) => {
@@ -45,20 +48,16 @@ specialElementsArray.forEach((element) => {
     imgUploadPreview.classList.add(`effects__preview--${element.value}`);
     if (element.value === 'none') {
       sliderElementBlock.classList.add('hidden');
-      imgUploadPreview.style.filter = 'none';
-      sliderElementValue.value = 'none';
-    } else {
-      sliderElementBlock.classList.remove('hidden');
-    } if (element.value === 'chrome') {
-      sliderElement.noUiSlider.updateOptions(FILTERSCONFIG.chrome);
-    } if (element.value === 'sepia') {
-      sliderElement.noUiSlider.updateOptions(FILTERSCONFIG.sepia);
-    } if (element.value === 'marvin') {
-      sliderElement.noUiSlider.updateOptions(FILTERSCONFIG.marvin);
-    } if (element.value === 'phobos') {
-      sliderElement.noUiSlider.updateOptions(FILTERSCONFIG.phobos);
-    } if (element.value === 'heat') {
-      sliderElement.noUiSlider.updateOptions(FILTERSCONFIG.phobos);
+    } else if (element.value === 'chrome') {
+      setFilter(FILTERSCONFIG.chrome);
+    } else if (element.value === 'sepia') {
+      setFilter(FILTERSCONFIG.sepia);
+    } else if (element.value === 'marvin') {
+      setFilter(FILTERSCONFIG.marvin);
+    } else if (element.value === 'phobos') {
+      setFilter(FILTERSCONFIG.phobos);
+    } else if (element.value === 'heat') {
+      setFilter(FILTERSCONFIG.phobos);
     }
   });
 });

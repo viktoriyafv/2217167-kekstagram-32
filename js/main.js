@@ -6,3 +6,4 @@ import './picture-editing.js';
 import './comments-loader.js';
 import './filters.js';
 import './slider.js';
+import './const.js';

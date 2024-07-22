@@ -1,6 +1,6 @@
 import { openBigPicture } from './big-picture.js';
 import { similarObject } from './data.js';
-import { isEnterKey} from './util.js';
+import { isEnterKey } from './util.js';
 
 
 const picturesContainer = document.querySelector('.pictures');

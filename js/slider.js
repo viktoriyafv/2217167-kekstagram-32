@@ -35,6 +35,7 @@ const defaultEffect = () => {
   imgUploadPreview.className = '';
   imgUploadPreview.classList.add('effects__preview--none');
   sliderElementBlock.classList.add('hidden');
+  imgUploadPreview.style.filter = 'none';
 };
 
 const setFilter = (filter) => {
@@ -50,18 +51,26 @@ specialElementsArray.forEach((element) => {
   element.addEventListener('change', () => {
     imgUploadPreview.className = '';
     imgUploadPreview.classList.add(`effects__preview--${element.value}`);
-    if (element.value === 'none') {
-      sliderElementBlock.classList.add('hidden');
-    } else if (element.value === 'chrome') {
-      setFilter(FILTERSCONFIG.chrome);
-    } else if (element.value === 'sepia') {
-      setFilter(FILTERSCONFIG.sepia);
-    } else if (element.value === 'marvin') {
-      setFilter(FILTERSCONFIG.marvin);
-    } else if (element.value === 'phobos') {
-      setFilter(FILTERSCONFIG.phobos);
-    } else if (element.value === 'heat') {
-      setFilter(FILTERSCONFIG.phobos);
+    switch (element.value) {
+      case 'none':
+        sliderElementBlock.classList.add('hidden');
+        imgUploadPreview.style.filter = 'none';
+        break;
+      case 'chrome':
+        setFilter(FILTERSCONFIG.chrome);
+        break;
+      case 'sepia':
+        setFilter(FILTERSCONFIG.sepia);
+        break;
+      case 'marvin':
+        setFilter(FILTERSCONFIG.marvin);
+        break;
+      case 'phobos':
+        setFilter(FILTERSCONFIG.phobos);
+        break;
+      case 'heat':
+        setFilter(FILTERSCONFIG.heat);
+        break;
     }
   });
 });

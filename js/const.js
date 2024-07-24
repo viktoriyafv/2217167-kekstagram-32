@@ -118,5 +118,4 @@ const FILTERSCONFIG = {
   },
 };
 
-
 export { NAMES, MESSAGES, DESCRIPTIONS, indefications, body, formUpload, imgUploadPreview, FILTERSCONFIG };

@@ -8,7 +8,7 @@ const Method = {
   POST: 'POST',
 };
 
-const load = (route, errorText, method = Method.GET, body = null) =>
+const load = (route, method = Method.GET, body = null) =>
   fetch(`${BASE_URL}${route}`, { method, body })
     .then((response) => {
       if (!response.ok) {
@@ -17,6 +17,7 @@ const load = (route, errorText, method = Method.GET, body = null) =>
       return response.json();
     })
     .catch(() => {
+      throw new Error();
     });
 
 const getData = () => load(Route.GET_DATA);

@@ -56,7 +56,7 @@ const onErrorForm = () => {
   document.addEventListener('click', onMessageClose);
   document.addEventListener('keydown', onEscKeydown);
   errorButtonElement.addEventListener('click', onShowAlertClose);
-  document.removeEventListener('keydown', onEscKeydown);
+  //document.removeEventListener('keydown', onEscKeydown);
 };
 
 const onErrorDataForm = () => {

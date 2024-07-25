@@ -4,7 +4,6 @@ import { renderCommentsList } from './rendering-comments.js';
 
 const bigPicture = document.querySelector('.big-picture');
 const commentsLoader = bigPicture.querySelector('.comments-loader');
-//const socialComments = bigPicture.querySelector('.social__comment-count');
 const closeButtonPicture = bigPicture.querySelector('.big-picture__cancel');
 
 const renderPictureDetails = ({ url, likes, description, comments }) => {

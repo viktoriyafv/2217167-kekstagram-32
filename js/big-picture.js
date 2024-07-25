@@ -1,6 +1,6 @@
 import { onEscKeydown } from './util.js';
 import { indefications, body } from './const.js';
-import { renderCommentsList } from './render-comments.js';
+import { renderCommentsList } from './rendering-comments.js';
 
 const bigPicture = document.querySelector('.big-picture');
 const commentsLoader = bigPicture.querySelector('.comments-loader');
@@ -53,4 +53,4 @@ closeButtonPicture.addEventListener('click', () => {
   closeBigPicture();
 });
 
-export { openBigPicture, closeBigPicture };
+export { openBigPicture, closeBigPicture, renderPictureDetails };

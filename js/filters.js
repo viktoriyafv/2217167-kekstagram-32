@@ -21,6 +21,7 @@ const filterByRandom = (picture) => {
     randomPictures.push(picture[randomId]);
   });
   return generatePictures(randomPictures);
+  return generatePictures(randomPictures);
 };
 
 const filterByComments = (picture) => {
@@ -40,6 +41,7 @@ const addFilters = (picture) => {
         break;
       case randomFilter:
         removePictures();
+        filterByRandom(picture);
         filterByRandom(picture);
         break;
       case discussedFilter:

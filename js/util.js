@@ -9,10 +9,10 @@ const getRandomInteger = (a, b) => {
   return Math.floor(result);
 };
 
-const getRandomIdentifier = (a = 1, b = 1000) => {
+const getRandomIdentifier = (a = 0, b = 1000) => {
   const idNumber = [];
   return function () {
-    let randomId = 1;
+    let randomId = 0;
     do {
       randomId = getRandomInteger(a, b);
     } while (idNumber.includes(randomId));

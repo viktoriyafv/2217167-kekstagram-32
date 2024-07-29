@@ -33,6 +33,8 @@ const DESCRIPTIONS = [
   'Одни эмоции',
 ];
 
+const FILE_TYPES = ['jpg', 'jpeg', 'png', 'pdf'];
+
 const Indefications = {
   MAX_AVATAR_NUMBER: 6,
   MAX_PHOTO_ID: 25,
@@ -122,4 +124,4 @@ const body = document.querySelector('body');
 const formUpload = document.querySelector('.img-upload__form');
 const imgUploadPreview = document.querySelector('.img-upload__preview img');
 
-export { NAMES, MESSAGES, DESCRIPTIONS, Indefications, body, formUpload, imgUploadPreview, FiltersConfig };
+export { NAMES, MESSAGES, DESCRIPTIONS, FILE_TYPES, Indefications, body, formUpload, imgUploadPreview, FiltersConfig };

@@ -21,7 +21,6 @@ const filterByRandom = (picture) => {
     randomPictures.push(picture[randomId]);
   });
   return generatePictures(randomPictures);
-  return generatePictures(randomPictures);
 };
 
 const filterByComments = (picture) => {

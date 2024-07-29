@@ -1,7 +1,7 @@
 import { body, formUpload, imgUploadPreview } from './const.js';
 import {onEscKeydown } from './util.js';
 import { defaultEffect, onChangeEffect } from './slider.js';
-import { scaleControl, scaleCancel } from './picture-editing.js';
+import { scaleControl, scaleCancel } from './editing-picture.js';
 
 const imgUploadCancel = formUpload.querySelector('.img-upload__cancel');
 const imgUpload = formUpload.querySelector('.img-upload__input');

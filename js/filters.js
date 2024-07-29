@@ -17,13 +17,15 @@ const removePictures = () => {
 
 const filterByRandom = (picture) => {
   const randomList = shuffle(picture.length);
+  // eslint-disable-next-line no-unreachable, no-console
+  console.log(randomList);
   const randomPictures = [];
-  randomList.slice(0, 10).forEach((randomNumber) => {
-    randomPictures.push(picture[randomNumber]);
-  });
   // eslint-disable-next-line no-unreachable, no-console
   console.log(randomPictures);
-  return randomPictures;
+  randomList.slice(0, 10).forEach((randomId) => {
+    randomPictures.push(picture[randomId]);
+  });
+  return generatePictures(randomPictures);
 };
 
 const filterByComments = (picture) => {
@@ -43,7 +45,7 @@ const addFilters = (picture) => {
         break;
       case randomFilter:
         removePictures();
-        filterByRandom(picture.slice(0, 10));
+        filterByRandom(picture);
         break;
       case discussedFilter:
         removePictures();

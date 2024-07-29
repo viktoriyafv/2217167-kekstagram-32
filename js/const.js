@@ -33,27 +33,25 @@ const DESCRIPTIONS = [
   'Одни эмоции',
 ];
 
-const indefications = {
-  MAXAVATARNUMBER: 6,
-  MAXPHOTOID: 25,
-  MAXPHOTOURL: 25,
-  MINLIKES: 15,
-  MAXLIKES: 200,
-  MAXCOMMENTS: 30,
-  COMMENTSAMOUNT: 5,
-  USERAVATARWIDTH: 35,
-  USERAVATARHEIGTH: 35,
-  MAXHASHTAGCOUNT: 5,
-  MAXCOMMENTSLENGTH: 140,
-  RANDOMPICTURECOUNT: 10,
-  SIMILARPICTURECOUNT: 25
+const Indefications = {
+  MAX_AVATAR_NUMBER: 6,
+  MAX_PHOTO_ID: 25,
+  MAX_PHOTO_URL: 25,
+  MIN_LIKES: 15,
+  MAX_LIKES: 200,
+  MAX_COMMENTS: 30,
+  COMMENTS_AMOUNT: 5,
+  USER_AVATAR_WIDTH: 35,
+  USER_AVATAR_HEIGTH: 35,
+  MAX_HASHTAG_COUNT: 5,
+  MAX_COMMENTS_LENGTH: 140,
+  RANDOM_PICTURE_COUNT: 10,
+  SIMILAR_PICTURE_COUNT: 25,
+  RERENDER_DELAY: 500,
+  ERROR_DATA_TIMEOUT_MS: 5000
 };
 
-const body = document.querySelector('body');
-const formUpload = document.querySelector('.img-upload__form');
-const imgUploadPreview = document.querySelector('.img-upload__preview img');
-
-const FILTERSCONFIG = {
+const FiltersConfig = {
   chrome: {
     options: {
       range: {
@@ -120,4 +118,8 @@ const FILTERSCONFIG = {
   },
 };
 
-export { NAMES, MESSAGES, DESCRIPTIONS, indefications, body, formUpload, imgUploadPreview, FILTERSCONFIG };
+const body = document.querySelector('body');
+const formUpload = document.querySelector('.img-upload__form');
+const imgUploadPreview = document.querySelector('.img-upload__preview img');
+
+export { NAMES, MESSAGES, DESCRIPTIONS, Indefications, body, formUpload, imgUploadPreview, FiltersConfig };

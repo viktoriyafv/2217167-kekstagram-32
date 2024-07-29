@@ -1,4 +1,4 @@
-import { indefications } from './const.js';
+import { Indefications } from './const.js';
 
 const commentsList = document.querySelector('.social__comments');
 
@@ -12,8 +12,8 @@ const renderCommentsList = (comments) => {
     userAvatar.src = comment.avatar;
     userAvatar.alt = comment.name;
     userAvatar.id = comment.id;
-    userAvatar.width = indefications.USERAVATARWIDTH;
-    userAvatar.height = indefications.USERAVATARHEIGTH;
+    userAvatar.width = Indefications.USER_AVATAR_WIDTH;
+    userAvatar.height = Indefications.USER_AVATAR_HEIGTH;
     const textComment = document.createElement('p');
     textComment.className = 'social__text';
     textComment.textContent = comment.message;

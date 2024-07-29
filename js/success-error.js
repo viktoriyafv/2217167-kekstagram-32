@@ -1,5 +1,5 @@
 import { isEscapeKey } from './util.js';
-import { body } from './const.js';
+import { body, Indefications } from './const.js';
 
 const succesMessage = document.querySelector('#success')
   .content
@@ -61,6 +61,9 @@ const onErrorForm = () => {
 const onErrorDataForm = () => {
   const cloneErrorDataElement = errorDataMessage.cloneNode(true);
   body.append(cloneErrorDataElement);
+  setTimeout(() => {
+    cloneErrorDataElement.remove();
+  }, Indefications.ERROR_DATA_TIMEOUT_MS);
 };
 
 export { onSuccessForm, onErrorForm, onErrorDataForm };

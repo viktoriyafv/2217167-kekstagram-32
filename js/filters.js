@@ -17,11 +17,7 @@ const removePictures = () => {
 
 const filterByRandom = (picture) => {
   const randomList = shuffle(picture.length);
-  // eslint-disable-next-line no-unreachable, no-console
-  console.log(randomList);
   const randomPictures = [];
-  // eslint-disable-next-line no-unreachable, no-console
-  console.log(randomPictures);
   randomList.slice(0, 10).forEach((randomId) => {
     randomPictures.push(picture[randomId]);
   });

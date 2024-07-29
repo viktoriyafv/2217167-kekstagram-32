@@ -9,12 +9,12 @@ const getRandomInteger = (a, b) => {
   return Math.floor(result);
 };
 
-const getRandomIdentifier = (a = 0,b = 1000)=>{
+const getRandomIdentifier = (a = 1, b = 1000) => {
   const idNumber = [];
-  return function (){
-    let randomId = 0;
+  return function () {
+    let randomId = 1;
     do {
-      randomId = getRandomInteger(a,b);
+      randomId = getRandomInteger(a, b);
     } while (idNumber.includes(randomId));
     idNumber.push(randomId);
     return randomId;
@@ -36,7 +36,7 @@ const onEscKeydown = (evt) => {
   }
 };
 
-function debounce (callback, timeoutDelay = 500) {
+function debounce(callback, timeoutDelay = 500) {
   let timeoutId;
   return (...rest) => {
     clearTimeout(timeoutId);
@@ -44,7 +44,7 @@ function debounce (callback, timeoutDelay = 500) {
   };
 }
 
-function throttle (callback, delayBetweenFrames) {
+function throttle(callback, delayBetweenFrames) {
   let lastTime = 0;
   return (...rest) => {
     const now = new Date();
@@ -55,4 +55,18 @@ function throttle (callback, delayBetweenFrames) {
   };
 }
 
-export { getRandomInteger, getRandomIdentifier, getRandomArrayElement, isEscapeKey, isEnterKey, onEscKeydown, debounce, throttle };
+const shuffle = (length) => {
+  const numbers = [];
+  for (let i = 0; i < length; i++) {
+    numbers[i] = i;
+  }
+  for (let i = length - 1; i > 0; i--) {
+    const j = getRandomInteger(0, i);
+    const swap = numbers[j];
+    numbers[j] = numbers[i];
+    numbers[i] = swap;
+  }
+  return numbers;
+};
+
+export { getRandomInteger, getRandomIdentifier, getRandomArrayElement, isEscapeKey, isEnterKey, onEscKeydown, debounce, throttle, shuffle };

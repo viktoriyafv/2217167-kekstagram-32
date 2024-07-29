@@ -11,6 +11,7 @@ const renderCommentsList = (comments) => {
     userAvatar.className = 'social__picture';
     userAvatar.src = comment.avatar;
     userAvatar.alt = comment.name;
+    userAvatar.id = comment.id;
     userAvatar.width = indefications.USERAVATARWIDTH;
     userAvatar.height = indefications.USERAVATARHEIGTH;
     const textComment = document.createElement('p');

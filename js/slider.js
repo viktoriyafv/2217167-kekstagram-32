@@ -1,5 +1,5 @@
 import { imgUploadPreview, FiltersConfig } from './const.js';
-import { loadingpicture } from './loading-picture.js';
+import { loadingPicture } from './loading-picture.js';
 
 const sliderElement = document.querySelector('.effect-level__slider');
 const sliderElementValue = document.querySelector('.effect-level__value');
@@ -7,7 +7,7 @@ const sliderElementBlock = document.querySelector('.img-upload__effect-level');
 const specialElements = document.querySelectorAll('.effects__radio');
 const specialElementsArray = Array.from(specialElements);
 
-loadingpicture();
+loadingPicture();
 
 noUiSlider.create(sliderElement, {
   range: {

@@ -41,7 +41,6 @@ const addFilters = (picture) => {
       case randomFilter:
         removePictures();
         filterByRandom(picture);
-        filterByRandom(picture);
         break;
       case discussedFilter:
         removePictures();

@@ -1,5 +1,6 @@
 import { closeUploadOverlay } from './form.js';
 import { closeBigPicture } from './big-picture.js';
+import { onErrorForm } from './success-error.js';
 
 const getRandomInteger = (a, b) => {
   const lower = Math.ceil(Math.min(a, b));
@@ -8,10 +9,10 @@ const getRandomInteger = (a, b) => {
   return Math.floor(result);
 };
 
-const getRandomIdentifier = (a = 1, b = 1000) => {
+const getRandomIdentifier = (a = 0, b = 1000) => {
   const idNumber = [];
   return function () {
-    let randomId = 1;
+    let randomId = 0;
     do {
       randomId = getRandomInteger(a, b);
     } while (idNumber.includes(randomId));
@@ -28,7 +29,7 @@ const isEnterKey = (evt) => evt.key === 'Enter';
 
 const onEscKeydown = (evt) => {
   const inputFocus = evt.target.matches('input.text__hashtags:focus') || evt.target.matches('textarea.text__description:focus');
-  if (isEscapeKey(evt) && !inputFocus) {
+  if (isEscapeKey(evt) && !inputFocus && !onErrorForm) {
     evt.preventDefault();
     closeUploadOverlay();
     closeBigPicture();

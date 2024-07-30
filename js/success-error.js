@@ -17,7 +17,7 @@ const onEscKeydownError = (evt) => {
   if (isEscapeKey(evt)) {
     onShowAlertClose();
   }
-  return document.addEventListener('keydown', onEscKeydown);;
+  return document.addEventListener('keydown', onEscKeydown);
 };
 
 function onShowAlertClose() {

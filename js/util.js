@@ -35,4 +35,4 @@ const onEscKeydown = (evt) => {
   }
 };
 
-export { getRandomInteger, getRandomIdentifier, getRandomArrayElement, isEnterKey, onEscKeydown };
+export { getRandomInteger, getRandomIdentifier, getRandomArrayElement, isEscapeKey, isEnterKey, onEscKeydown };

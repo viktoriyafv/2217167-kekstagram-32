@@ -1,10 +1,9 @@
 import { onEscKeydown } from './util.js';
 import { indefications, body } from './const.js';
-import { renderCommentsList } from './render-comments.js';
+import { renderCommentsList } from './rendering-comments.js';
 
 const bigPicture = document.querySelector('.big-picture');
 const commentsLoader = bigPicture.querySelector('.comments-loader');
-//const socialComments = bigPicture.querySelector('.social__comment-count');
 const closeButtonPicture = bigPicture.querySelector('.big-picture__cancel');
 
 const renderPictureDetails = ({ url, likes, description, comments }) => {
@@ -53,4 +52,4 @@ closeButtonPicture.addEventListener('click', () => {
   closeBigPicture();
 });
 
-export { openBigPicture, closeBigPicture };
+export { openBigPicture, closeBigPicture, renderPictureDetails };

@@ -1,4 +1,4 @@
-import { generatePictures } from './rendering-picture.js';
+import { generatePictures } from './generate-picture.js';
 import { setUserFormSubmit } from './valid.js';
 import { closeUploadOverlay } from './form.js';
 import { getData } from './api.js';

@@ -20,6 +20,8 @@ const filterByRandom = (picture) => {
   randomList.slice(0, Indefications.RANDOM_PICTURE_COUNT).forEach((randomId) => {
     randomPictures.push(picture[randomId]);
   });
+  // eslint-disable-next-line no-console
+  console.log(randomPictures);
   return generatePictures(randomPictures);
 };
 

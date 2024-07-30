@@ -1,5 +1,5 @@
 import { onEscKeydown } from './util.js';
-import { indefications, body } from './const.js';
+import { Indefications, body } from './const.js';
 import { renderCommentsList } from './rendering-comments.js';
 
 const bigPicture = document.querySelector('.big-picture');
@@ -12,12 +12,12 @@ const renderPictureDetails = ({ url, likes, description, comments }) => {
   bigPicture.querySelector('.likes-count').textContent = likes;
   bigPicture.querySelector('.social__caption').textContent = description;
   bigPicture.querySelector('.social__comment-total-count').textContent = comments.length;
-  if (indefications.COMMENTSAMOUNT >= comments.length) {
+  if (Indefications.COMMENTS_AMOUNT >= comments.length) {
     bigPicture.querySelector('.social__comment-shown-count').textContent = comments.length;
     commentsLoader.classList.add('hidden');
   } else {
     commentsLoader.classList.remove('hidden');
-    bigPicture.querySelector('.social__comment-shown-count').textContent = indefications.COMMENTSAMOUNT;
+    bigPicture.querySelector('.social__comment-shown-count').textContent = Indefications.COMMENTS_AMOUNT;
   }
 };
 
@@ -27,9 +27,9 @@ const openBigPicture = (data) => {
   body.classList.add('modal-open');
   document.addEventListener('keydown', onEscKeydown);
   renderPictureDetails(data);
-  renderCommentsList(data.comments.slice(0, indefications.COMMENTSAMOUNT));
+  renderCommentsList(data.comments.slice(0, Indefications.COMMENTS_AMOUNT));
   commentsLoader.addEventListener('click', () => {
-    commentShown += indefications.COMMENTSAMOUNT;
+    commentShown += Indefications.COMMENTS_AMOUNT;
     const currentComments = data.comments.slice(0, commentShown);
     renderCommentsList(currentComments);
     if (commentShown >= data.comments.length) {

@@ -18,6 +18,7 @@ const onEscKeydownError = (evt) => {
     onShowAlertClose();
   }
 };
+
 function onShowAlertClose() {
   const successSectionElement = document.querySelector('.success');
   const errorSectionElement = document.querySelector('.error');

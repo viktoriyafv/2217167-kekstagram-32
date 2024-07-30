@@ -1,4 +1,4 @@
-import { imgUploadPreview, FILTERSCONFIG } from './const.js';
+import { imgUploadPreview, FiltersConfig } from './const.js';
 
 const sliderElement = document.querySelector('.effect-level__slider');
 const sliderElementValue = document.querySelector('.effect-level__value');
@@ -58,19 +58,19 @@ const onChangeEffect = () => {
           imgUploadPreview.style.filter = 'none';
           break;
         case 'chrome':
-          setFilter(FILTERSCONFIG.chrome);
+          setFilter(FiltersConfig.chrome);
           break;
         case 'sepia':
-          setFilter(FILTERSCONFIG.sepia);
+          setFilter(FiltersConfig.sepia);
           break;
         case 'marvin':
-          setFilter(FILTERSCONFIG.marvin);
+          setFilter(FiltersConfig.marvin);
           break;
         case 'phobos':
-          setFilter(FILTERSCONFIG.phobos);
+          setFilter(FiltersConfig.phobos);
           break;
         case 'heat':
-          setFilter(FILTERSCONFIG.heat);
+          setFilter(FiltersConfig.heat);
           break;
       }
     });

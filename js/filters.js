@@ -1,5 +1,5 @@
 import { debounce, shuffle } from './util';
-import { generatePictures } from './rendering-picture';
+import { generatePictures } from './generate-picture.js';
 import { Indefications } from './const.js';
 
 const filterForm = document.querySelector('.img-filters');

@@ -1,4 +1,4 @@
-import { isEscapeKey } from './util.js';
+import { isEscapeKey, onEscKeydown } from './util.js';
 import { body, Indefications } from './const.js';
 
 const succesMessage = document.querySelector('#success')
@@ -13,12 +13,11 @@ const errorDataMessage = document.querySelector('#data-error')
   .content
   .querySelector('.data-error');
 
-const onEscKeydown = (evt) => {
+const onEscKeydownError = (evt) => {
   if (isEscapeKey(evt)) {
     onShowAlertClose();
   }
 };
-
 function onShowAlertClose() {
   const successSectionElement = document.querySelector('.success');
   const errorSectionElement = document.querySelector('.error');
@@ -30,7 +29,7 @@ function onShowAlertClose() {
   if (errorSectionElement) {
     errorSectionElement.remove();
   }
-  document.addEventListener('keydown', onEscKeydown);
+  document.addEventListener('keydown', onEscKeydownError);
 }
 
 const onMessageClose = (evt) => {
@@ -45,7 +44,7 @@ const onSuccessForm = () => {
   body.append(cloneSuccessElement);
 
   document.addEventListener('click', onMessageClose);
-  document.addEventListener('keydown', onEscKeydown);
+  document.addEventListener('keydown', onEscKeydownError);
   successButtonElement.addEventListener('click', onShowAlertClose);
 };
 
@@ -55,8 +54,9 @@ const onErrorForm = () => {
   body.append(cloneErrorElement);
 
   document.addEventListener('click', onMessageClose);
-  document.addEventListener('keydown', onEscKeydown);
+  document.addEventListener('keydown', onEscKeydownError);
   errorButtonElement.addEventListener('click', onShowAlertClose);
+  document.removeEventListener('keydown', onEscKeydown);
 };
 
 const onErrorDataForm = () => {

@@ -2,7 +2,7 @@
 
 * Студент: [Виктория Фадеева](https://up.htmlacademy.ru/javascript/32/user/2217167).
 * Наставник: [Станислав Михайлов](https://htmlacademy.ru/profile/id139638).
-* Сайт: [Kekstagram-VF](https://viktoriyafv.github.io/2217167-kekstagram-32/).
+* Сайт: [Kekstagram-VV](https://viktoriyafv.github.io/2217167-kekstagram-32/).
 ---
 
 _Не удаляйте и не изменяйте самовольно файлы и папки:_

@@ -1,6 +1,7 @@
 import { isEscapeKey, onEscKeydown } from './util.js';
-import { body, Indefications } from './const.js';
+import { Indefications } from './const.js';
 
+const body = document.querySelector('body');
 const succesMessage = document.querySelector('#success')
   .content
   .querySelector('.success');

@@ -43,17 +43,6 @@ function debounce(callback, timeoutDelay = 500) {
   };
 }
 
-function throttle(callback, delayBetweenFrames) {
-  let lastTime = 0;
-  return (...rest) => {
-    const now = new Date();
-    if (now - lastTime >= delayBetweenFrames) {
-      callback.apply(this, rest);
-      lastTime = now;
-    }
-  };
-}
-
 const shuffle = (length) => {
   const numbers = [];
   for (let i = 0; i < length; i++) {
@@ -68,4 +57,4 @@ const shuffle = (length) => {
   return numbers;
 };
 
-export { getRandomInteger, getRandomIdentifier, getRandomArrayElement, isEscapeKey, isEnterKey, onEscKeydown, debounce, throttle, shuffle };
+export { getRandomInteger, getRandomIdentifier, getRandomArrayElement, isEscapeKey, isEnterKey, onEscKeydown, debounce, shuffle };

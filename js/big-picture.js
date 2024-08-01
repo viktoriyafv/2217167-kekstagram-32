@@ -1,7 +1,8 @@
 import { onEscKeydown } from './util.js';
-import { Indefications, body } from './const.js';
+import { Indefications } from './const.js';
 import { renderCommentsList } from './rendering-comments.js';
 
+const body = document.querySelector('body');
 const bigPicture = document.querySelector('.big-picture');
 const commentsLoader = bigPicture.querySelector('.comments-loader');
 const closeButtonPicture = bigPicture.querySelector('.big-picture__cancel');

@@ -1,8 +1,10 @@
-import { body, formUpload, imgUploadPreview } from './const.js';
 import {onEscKeydown } from './util.js';
 import { defaultEffect, onChangeEffect } from './slider.js';
 import { scaleControl, scaleCancel } from './editing-picture.js';
 
+const body = document.querySelector('body');
+const formUpload = document.querySelector('.img-upload__form');
+const imgUploadPreview = document.querySelector('.img-upload__preview img');
 const imgUploadCancel = formUpload.querySelector('.img-upload__cancel');
 const imgUpload = formUpload.querySelector('.img-upload__input');
 const imgUploadOverlay = formUpload.querySelector('.img-upload__overlay');

@@ -57,4 +57,4 @@ const shuffle = (length) => {
   return numbers;
 };
 
-export { getRandomInteger, getRandomIdentifier, getRandomArrayElement, isEscapeKey, isEnterKey, onEscKeydown, debounce, throttle, shuffle };
+export { getRandomInteger, getRandomIdentifier, getRandomArrayElement, isEscapeKey, isEnterKey, onEscKeydown, debounce, shuffle };

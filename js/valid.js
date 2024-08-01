@@ -1,8 +1,9 @@
-import { Indefications, formUpload } from './const';
+import { Indefications } from './const';
 import { sendData } from './api.js';
 import { onSuccessForm, onErrorForm } from './success-error.js';
 import { closeUploadOverlay } from './form.js';
 
+const formUpload = document.querySelector('.img-upload__form');
 const hashtags = document.querySelector('.text__hashtags');
 const comment = document.querySelector('.text__description');
 const submitButton = document.querySelector('.img-upload__submit');

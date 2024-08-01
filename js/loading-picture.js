@@ -1,7 +1,7 @@
-import { imgUploadPreview, FILE_TYPES } from './const.js';
+import { FILE_TYPES } from './const.js';
 
+const imgUploadPreview = document.querySelector('.img-upload__preview img');
 const fileChooser = document.querySelector('.img-upload__start input[type=file]');
-
 
 const loadingPicture = () => {
   fileChooser.addEventListener('change', () => {

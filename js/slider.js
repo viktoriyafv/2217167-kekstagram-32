@@ -1,6 +1,7 @@
-import { imgUploadPreview, FiltersConfig } from './const.js';
+import { FiltersConfig } from './const.js';
 import { loadingPicture } from './loading-picture.js';
 
+const imgUploadPreview = document.querySelector('.img-upload__preview img');
 const sliderElement = document.querySelector('.effect-level__slider');
 const sliderElementValue = document.querySelector('.effect-level__value');
 const sliderElementBlock = document.querySelector('.img-upload__effect-level');

@@ -43,4 +43,4 @@ const shuffle = (length) => {
   return numbers;
 };
 
-export { getRandomInteger, isEscapeKey, isEnterKey, onEscKeydown, debounce, shuffle };
+export { isEscapeKey, isEnterKey, onEscKeydown, debounce, shuffle };

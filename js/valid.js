@@ -1,4 +1,4 @@
-import { Indefications } from './const';
+import { Indefications } from './const.js';
 import { sendData } from './api.js';
 import { onSuccessForm, onErrorForm } from './success-error.js';
 import { closeUploadOverlay } from './form.js';

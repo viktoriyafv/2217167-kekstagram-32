@@ -1,4 +1,4 @@
-import { debounce, shuffle } from './util';
+import { debounce, shuffle } from './util.js';
 import { generatePictures } from './generate-picture.js';
 import { Indefications } from './const.js';
 

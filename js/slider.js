@@ -1,5 +1,5 @@
 import { FiltersConfig } from './const.js';
-import { loadingPicture } from './loading-picture.js';
+import { downloadPictures } from './download-picture.js';
 
 const imgUploadPreview = document.querySelector('.img-upload__preview img');
 const sliderElement = document.querySelector('.effect-level__slider');
@@ -8,7 +8,7 @@ const sliderElementBlock = document.querySelector('.img-upload__effect-level');
 const specialElements = document.querySelectorAll('.effects__radio');
 const specialElementsArray = Array.from(specialElements);
 
-loadingPicture();
+downloadPictures();
 
 noUiSlider.create(sliderElement, {
   range: {
@@ -51,7 +51,7 @@ const setFilter = (filter) => {
   });
 };
 
-const onChangeEffect = () => {
+const ChangeEffect = () => {
   specialElementsArray.forEach((element) => {
     element.addEventListener('change', () => {
       imgUploadPreview.className = '';
@@ -80,4 +80,4 @@ const onChangeEffect = () => {
     });
   });
 };
-export { defaultEffect, onChangeEffect };
+export { defaultEffect, ChangeEffect };

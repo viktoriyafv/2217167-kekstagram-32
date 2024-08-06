@@ -8,10 +8,10 @@ const pictureTemplate = document.querySelector('#picture')
   .content
   .querySelector('.picture');
 
-const generatePictures = (picture) => {
+const generatePictures = (pictures) => {
   const similarListFragment = document.createDocumentFragment();
 
-  picture.forEach(({ id, url, description, likes, comments }) => {
+  pictures.forEach(({ id, url, description, likes, comments }) => {
     const pictureElement = pictureTemplate.cloneNode(true);
     pictureElement.querySelector('.picture__img').dataset.id = id + 1;
     pictureElement.querySelector('.picture__img').src = url;

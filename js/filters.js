@@ -15,16 +15,16 @@ const removePictures = () => {
 };
 
 const filterByRandom = (picture) => {
-  const randomList = shuffle(picture.length);
+  const randomLists = shuffle(picture.length);
   const randomPictures = [];
-  randomList.slice(0, Indefications.RANDOM_PICTURE_COUNT).forEach((randomId) => {
+  randomLists.slice(0, Indefications.RANDOM_PICTURE_COUNT).forEach((randomId) => {
     randomPictures.push(picture[randomId]);
   });
   return generatePictures(randomPictures);
 };
 
 const filterByComments = (picture) => {
-  const pictureByComments = picture.slice(generatePictures(picture.slice(0, Indefications.SIMILAR_PICTURE_COUNT).sort((a, b) => a.comments.length < b.comments.length ? 1 : -1)));
+  const pictureByComments = picture.slice(generatePictures(picture.slice(0, Indefications.SIMILAR_PICTURE_COUNT).sort((k, l) => k.comments.length < l.comments.length ? 1 : -1)));
   return pictureByComments;
 };
 

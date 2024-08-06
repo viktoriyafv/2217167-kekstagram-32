@@ -3,7 +3,7 @@ import { FILE_TYPES } from './const.js';
 const imgUploadPreview = document.querySelector('.img-upload__preview img');
 const fileChooser = document.querySelector('.img-upload__start input[type=file]');
 
-const loadingPicture = () => {
+const downloadPictures = () => {
   fileChooser.addEventListener('change', () => {
     const file = fileChooser.files[0];
     const fileName = file.name.toLowerCase();
@@ -16,4 +16,4 @@ const loadingPicture = () => {
   });
 };
 
-export { loadingPicture };
+export { downloadPictures };

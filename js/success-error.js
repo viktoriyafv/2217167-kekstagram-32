@@ -1,4 +1,4 @@
-import { isEscapeKey, onEscKeydown } from './util.js';
+import { isEscapeKey, clickOnEscKeydown } from './util.js';
 import { Indefications } from './const.js';
 
 const body = document.querySelector('body');
@@ -14,14 +14,14 @@ const errorDataMessage = document.querySelector('#data-error')
   .content
   .querySelector('.data-error');
 
-const onEscKeydownError = (evt) => {
+const closeMessageOnEscKeydown = (evt) => {
   if (isEscapeKey(evt)) {
-    onShowAlertClose();
+    onMessageCloseWindow();
   }
-  return document.addEventListener('keydown', onEscKeydown);
+  return document.addEventListener('keydown', clickOnEscKeydown);
 };
 
-function onShowAlertClose() {
+function onMessageCloseWindow() {
   const successSectionElement = document.querySelector('.success');
   const errorSectionElement = document.querySelector('.error');
 
@@ -32,37 +32,37 @@ function onShowAlertClose() {
   if (errorSectionElement) {
     errorSectionElement.remove();
   }
-  document.addEventListener('keydown', onEscKeydownError);
+  document.addEventListener('keydown', closeMessageOnEscKeydown);
 }
 
-const onMessageClose = (evt) => {
+const CloseMessage = (evt) => {
   if (evt.target.closest('section')) {
-    onShowAlertClose();
+    onMessageCloseWindow();
   }
 };
 
-const onSuccessForm = () => {
+const openSuccessForm = () => {
   const cloneSuccessElement = succesMessage.cloneNode(true);
   const successButtonElement = cloneSuccessElement.querySelector('.success__button');
   body.append(cloneSuccessElement);
 
-  document.addEventListener('click', onMessageClose);
-  document.addEventListener('keydown', onEscKeydownError);
-  successButtonElement.addEventListener('click', onShowAlertClose);
+  document.addEventListener('click', CloseMessage);
+  document.addEventListener('keydown', closeMessageOnEscKeydown);
+  successButtonElement.addEventListener('click', onMessageCloseWindow);
 };
 
-const onErrorForm = () => {
+const openErrorForm = () => {
   const cloneErrorElement = errorMessage.cloneNode(true);
   const errorButtonElement = cloneErrorElement.querySelector('.error__button');
   body.append(cloneErrorElement);
 
-  document.addEventListener('click', onMessageClose);
-  document.addEventListener('keydown', onEscKeydownError);
-  errorButtonElement.addEventListener('click', onShowAlertClose);
-  document.removeEventListener('keydown', onEscKeydown);
+  document.addEventListener('click', CloseMessage);
+  document.addEventListener('keydown', closeMessageOnEscKeydown);
+  errorButtonElement.addEventListener('click', onMessageCloseWindow);
+  document.removeEventListener('keydown', clickOnEscKeydown);
 };
 
-const onErrorDataForm = () => {
+const openErrorDataForm = () => {
   const cloneErrorDataElement = errorDataMessage.cloneNode(true);
   body.append(cloneErrorDataElement);
   setTimeout(() => {
@@ -70,4 +70,4 @@ const onErrorDataForm = () => {
   }, Indefications.ERROR_DATA_TIMEOUT_MS);
 };
 
-export { onSuccessForm, onErrorForm, onErrorDataForm };
+export { openSuccessForm, openErrorForm, openErrorDataForm };

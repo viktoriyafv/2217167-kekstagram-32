@@ -2,7 +2,7 @@ import { generatePictures } from './generate-picture.js';
 import { setUserFormSubmit } from './valid.js';
 import { closeUploadOverlay } from './form.js';
 import { getData } from './api.js';
-import { onErrorDataForm } from './success-error.js';
+import { openErrorDataForm } from './success-error.js';
 import { addFilters } from './filters.js';
 import { Indefications } from './const.js';
 
@@ -15,7 +15,7 @@ getData()
     addFilters(picture);
   })
   .catch(() => {
-    onErrorDataForm();
+    openErrorDataForm();
     imgFilters.classList.add('img-filters--inactive');
   });
 

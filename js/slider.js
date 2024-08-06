@@ -1,5 +1,5 @@
 import { FiltersConfig } from './const.js';
-import { downloadPictures } from './download-picture.js';
+import { downloadPictures } from './download-pictures.js';
 
 const imgUploadPreview = document.querySelector('.img-upload__preview img');
 const sliderElement = document.querySelector('.effect-level__slider');

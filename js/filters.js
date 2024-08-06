@@ -15,9 +15,9 @@ const removePictures = () => {
 };
 
 const filterByRandom = (picture) => {
-  const randomLists = shuffle(picture.length);
+  const randomListPictures = shuffle(picture.length);
   const randomPictures = [];
-  randomLists.slice(0, Indefications.RANDOM_PICTURE_COUNT).forEach((randomId) => {
+  randomListPictures.slice(0, Indefications.RANDOM_PICTURE_COUNT).forEach((randomId) => {
     randomPictures.push(picture[randomId]);
   });
   return generatePictures(randomPictures);

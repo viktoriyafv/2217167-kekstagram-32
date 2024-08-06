@@ -1,9 +1,7 @@
-import { Indefications } from './const.js';
+import { REGULAR_HASHTAG, Indefications } from './const.js';
 import { sendData } from './api.js';
 import { openSuccessForm, openErrorForm } from './success-error.js';
 import { closeUploadOverlay } from './form.js';
-
-const REGULAR_HASHTAG = /^#[a-zа-яё0-9]{1,19}$/i;
 
 const formUpload = document.querySelector('.img-upload__form');
 const hashtags = document.querySelector('.text__hashtags');

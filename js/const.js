@@ -1,5 +1,7 @@
 const FILE_TYPES = ['jpg', 'jpeg', 'png', 'pdf'];
 
+const REGULAR_HASHTAG = /^#[a-zа-яё0-9]{1,19}$/i;
+
 const Indefications = {
   MAX_AVATAR_NUMBER: 6,
   MAX_PHOTO_ID: 25,
@@ -85,4 +87,4 @@ const FiltersConfig = {
   },
 };
 
-export { FILE_TYPES, Indefications, FiltersConfig };
+export { FILE_TYPES, REGULAR_HASHTAG, Indefications, FiltersConfig };

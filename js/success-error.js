@@ -16,12 +16,12 @@ const errorDataMessage = document.querySelector('#data-error')
 
 const closeMessageOnEscKeydown = (evt) => {
   if (isEscapeKey(evt)) {
-    onMessageCloseWindow();
+    closeMessageWindow();
   }
   return document.addEventListener('keydown', clickOnEscKeydown);
 };
 
-function onMessageCloseWindow() {
+function closeMessageWindow() {
   const successSectionElement = document.querySelector('.success');
   const errorSectionElement = document.querySelector('.error');
 
@@ -37,7 +37,7 @@ function onMessageCloseWindow() {
 
 const CloseMessage = (evt) => {
   if (evt.target.closest('section')) {
-    onMessageCloseWindow();
+    closeMessageWindow();
   }
 };
 
@@ -48,7 +48,7 @@ const openSuccessForm = () => {
 
   document.addEventListener('click', CloseMessage);
   document.addEventListener('keydown', closeMessageOnEscKeydown);
-  successButtonElement.addEventListener('click', onMessageCloseWindow);
+  successButtonElement.addEventListener('click', closeMessageWindow);
 };
 
 const openErrorForm = () => {
@@ -58,7 +58,7 @@ const openErrorForm = () => {
 
   document.addEventListener('click', CloseMessage);
   document.addEventListener('keydown', closeMessageOnEscKeydown);
-  errorButtonElement.addEventListener('click', onMessageCloseWindow);
+  errorButtonElement.addEventListener('click', closeMessageWindow);
   document.removeEventListener('keydown', clickOnEscKeydown);
 };
 

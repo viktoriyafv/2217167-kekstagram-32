@@ -24,7 +24,7 @@ const filterByRandom = (picture) => {
 };
 
 const filterByComments = (picture) => {
-  const pictureByComments = picture.slice(generatePictures(picture.slice(0, Indefications.SIMILAR_PICTURE_COUNT).sort((k, l) => k.comments.length < l.comments.length ? 1 : -1)));
+  const pictureByComments = picture.slice(generatePictures(picture.slice(0, Indefications.SIMILAR_PICTURE_COUNT).sort((min, max) => min.comments.length < max.comments.length ? 1 : -1)));
   return pictureByComments;
 };
 

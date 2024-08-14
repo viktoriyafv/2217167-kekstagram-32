@@ -1,4 +1,4 @@
-import {clickOnEscKeydown } from './util.js';
+import { onEscKeydownClick } from './util.js';
 import { defaultEffect, ChangeEffect } from './slider.js';
 import { scaleControl, scaleCancel } from './editing-picture.js';
 
@@ -12,7 +12,7 @@ const imgUploadOverlay = formUpload.querySelector('.img-upload__overlay');
 function openUploadOverlay () {
   imgUploadOverlay.classList.remove('hidden');
   body.classList.add('modal-open');
-  document.addEventListener('keydown', clickOnEscKeydown);
+  document.addEventListener('keydown', onEscKeydownClick);
   defaultEffect();
   ChangeEffect();
   scaleControl();
@@ -25,7 +25,7 @@ function closeUploadOverlay () {
   scaleCancel();
   imgUploadOverlay.classList.add('hidden');
   body.classList.remove('modal-open');
-  document.removeEventListener('keydown', clickOnEscKeydown);
+  document.removeEventListener('keydown', onEscKeydownClick);
 }
 
 imgUpload.addEventListener('change', () => {

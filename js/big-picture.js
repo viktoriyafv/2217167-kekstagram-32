@@ -1,4 +1,4 @@
-import { clickOnEscKeydown } from './util.js';
+import { onEscKeydownClick } from './util.js';
 import { Indefications } from './const.js';
 import { renderCommentsList } from './rendering-comments.js';
 
@@ -26,7 +26,7 @@ const openBigPicture = (data) => {
   let commentShown = 5;
   bigPicture.classList.remove('hidden');
   body.classList.add('modal-open');
-  document.addEventListener('keydown', clickOnEscKeydown);
+  document.addEventListener('keydown', onEscKeydownClick);
   renderPictureDetails(data);
   renderCommentsList(data.comments.slice(0, Indefications.COMMENTS_AMOUNT));
   commentsLoader.addEventListener('click', () => {
@@ -46,7 +46,7 @@ const openBigPicture = (data) => {
 function closeBigPicture() {
   bigPicture.classList.add('hidden');
   body.classList.remove('modal-open');
-  document.removeEventListener('keydown', clickOnEscKeydown);
+  document.removeEventListener('keydown', onEscKeydownClick);
 }
 
 closeButtonPicture.addEventListener('click', () => {

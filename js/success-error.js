@@ -1,4 +1,4 @@
-import { isEscapeKey, clickOnEscKeydown } from './util.js';
+import { isEscapeKey, onEscKeydownClick } from './util.js';
 import { Indefications } from './const.js';
 
 const body = document.querySelector('body');
@@ -14,11 +14,11 @@ const errorDataMessage = document.querySelector('#data-error')
   .content
   .querySelector('.data-error');
 
-const closeMessageOnEscKeydown = (evt) => {
+const onCloseMessageEscKeydown = (evt) => {
   if (isEscapeKey(evt)) {
     closeMessageWindow();
   }
-  return document.addEventListener('keydown', clickOnEscKeydown);
+  return document.addEventListener('keydown', onEscKeydownClick);
 };
 
 function closeMessageWindow() {
@@ -32,10 +32,10 @@ function closeMessageWindow() {
   if (errorSectionElement) {
     errorSectionElement.remove();
   }
-  document.addEventListener('keydown', closeMessageOnEscKeydown);
+  document.addEventListener('keydown', onCloseMessageEscKeydown);
 }
 
-const CloseMessage = (evt) => {
+const onCloseMessageClick = (evt) => {
   if (evt.target.closest('section')) {
     closeMessageWindow();
   }
@@ -46,8 +46,8 @@ const openSuccessForm = () => {
   const successButtonElement = cloneSuccessElement.querySelector('.success__button');
   body.append(cloneSuccessElement);
 
-  document.addEventListener('click', CloseMessage);
-  document.addEventListener('keydown', closeMessageOnEscKeydown);
+  document.addEventListener('click', onCloseMessageClick);
+  document.addEventListener('keydown', onCloseMessageEscKeydown);
   successButtonElement.addEventListener('click', closeMessageWindow);
 };
 
@@ -56,10 +56,10 @@ const openErrorForm = () => {
   const errorButtonElement = cloneErrorElement.querySelector('.error__button');
   body.append(cloneErrorElement);
 
-  document.addEventListener('click', CloseMessage);
-  document.addEventListener('keydown', closeMessageOnEscKeydown);
+  document.addEventListener('click', onCloseMessageClick);
+  document.addEventListener('keydown', onCloseMessageEscKeydown);
   errorButtonElement.addEventListener('click', closeMessageWindow);
-  document.removeEventListener('keydown', clickOnEscKeydown);
+  document.removeEventListener('keydown', onEscKeydownClick);
 };
 
 const openErrorDataForm = () => {

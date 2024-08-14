@@ -12,7 +12,7 @@ const isEscapeKey = (evt) => evt.key === 'Escape';
 
 const isEnterKey = (evt) => evt.key === 'Enter';
 
-const clickOnEscKeydown = (evt) => {
+const onEscKeydownClick = (evt) => {
   const inputFocus = evt.target.matches('input.text__hashtags:focus') || evt.target.matches('textarea.text__description:focus');
   if (isEscapeKey(evt) && !inputFocus) {
     evt.preventDefault();
@@ -43,4 +43,4 @@ const shuffle = (length) => {
   return numbers;
 };
 
-export { isEscapeKey, isEnterKey, clickOnEscKeydown, debounce, shuffle };
+export { isEscapeKey, isEnterKey, onEscKeydownClick, debounce, shuffle };
